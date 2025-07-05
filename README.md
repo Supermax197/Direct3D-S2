@@ -43,7 +43,8 @@ Generating high-resolution 3D shapes using volumetric representations such as Si
 - **CUDA Toolkit**: [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive)  
 - **PyTorch**: Install `torch` and `torchvision` first.  
   Make sure the PyTorch CUDA version matches your installed CUDA Toolkit.
-  一定要2.5.1 
+  一定要2.5.1 ,要确保网络能访问github和hf，在autodl服务器上，可以先执行source /etc/network_turbo
+
   ```bash
   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
   ```
@@ -64,7 +65,7 @@ apt-get install libsparsehash-dev
   git clone https://github.com/DreamTechAI/Direct3D-S2.git
   
   cd Direct3D-S2
-  
+  安装flash-attn 需要加上 pip install flash-attn --no-build-isolation
   pip install -r requirements.txt
   
   pip install -e .
@@ -96,7 +97,7 @@ mesh.export('output.obj')
 ### Web Demo
 
 We provide a Gradio web demo for Direct3D-S2, which allows you to generate 3D meshes from images interactively.
-
+先安装 pip install kornia timm gradio
 ```bash
 python app.py
 ```
