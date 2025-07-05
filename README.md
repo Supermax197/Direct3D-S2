@@ -43,13 +43,16 @@ Generating high-resolution 3D shapes using volumetric representations such as Si
 - **CUDA Toolkit**: [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive)  
 - **PyTorch**: Install `torch` and `torchvision` first.  
   Make sure the PyTorch CUDA version matches your installed CUDA Toolkit.
-
+  一定要2.5.1 
   ```bash
   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
   ```
 - **Torchsparse**:
   follow the [offical guide](https://github.com/mit-han-lab/torchsparse) or:
-  
+  先执行命令conda install google-sparsehash -c bioconda
+OR
+apt-get install libsparsehash-dev
+再安装 pip install ninja 
   ```bash
   git clone https://github.com/mit-han-lab/torchsparse
   cd torchsparse && python -m pip install .
